@@ -4,7 +4,7 @@ from matplotlib import pyplot
 
 
 def plot(xs, tss, fn):
-    pyplot.figure(figsize = (9.0, 6.0))
+    pyplot.figure(figsize = (9.0, 3.0))
     pyplot.xlim(min(xs), max(xs))
     pyplot.ylim(0.0, max(max(ts) for ts in tss))
     for i, ts in enumerate(tss):
@@ -13,7 +13,7 @@ def plot(xs, tss, fn):
     pyplot.savefig(fn, format = "svg", bbox_inches = "tight")
 
 def plot_variance_normalized():
-    xs = linspace(-6.0, 3.0, 256)
+    xs = linspace(-4.0, 2.0, 256)
     gs = (1.0 / sqrt(2.0 * pi)) * exp(-0.5 * xs * xs)
     ss = 0.5 / cosh((pi / 2.0) * xs)
     a = pi / (2.0 * sqrt(3.0))
@@ -24,7 +24,7 @@ def plot_variance_normalized():
     plot(xs, [ts, ss, fs, gs, hs], "variance.svg")
 
 def plot_normalized_at_zero():
-    xs = linspace(-8.0, 4.0, 256)
+    xs = linspace(-6.0, 3.0, 256)
     gs = exp(-0.5 * xs * xs)
     ss = 1.0 / cosh(xs)
     fs = 1.0 / cosh(xs / sqrt(2)) ** 2
