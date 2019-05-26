@@ -4,7 +4,7 @@ from matplotlib import pyplot
 
 
 def plot(xs, tss, fn):
-    pyplot.figure(figsize = (9.0, 3.0))
+    pyplot.figure(figsize = (9.0, 4.5))
     pyplot.xlim(min(xs), max(xs))
     pyplot.ylim(0.0, max(max(ts) for ts in tss))
     for i, ts in enumerate(tss):
